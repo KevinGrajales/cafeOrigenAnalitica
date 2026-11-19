@@ -125,3 +125,34 @@ FinAlgoritmo
             Escribir "La venta mas grande es: ", Temp
 
         FinAlgoritmo
+
+
+        - Cuanto gasta un cliente por compra:
+
+        Algoritmo PromedioCompras
+
+        Definir CantidadCompras Como Entero
+        Definir ValorCompra Como Entero
+        Definir TotalCompras Como Entero
+        Definir PromedioCompras Como Entero
+
+        TotalCompras <- 0
+        PromedioCompras <- 0
+
+
+        Escribir "Ingrese la cantidad de compras"
+        Leer CantidadCompras
+
+        Para i=1 Hasta CantidadCompras Con Paso 1 Hacer
+
+                Escribir "Ingrese el valor de la compra ", i
+                Leer ValorCompra
+
+                TotalCompras <- TotalCompras + ValorCompra
+
+        Fin Para
+
+        PromedioCompras <- TotalCompras / CantidadCompras
+        Escribir "El promedio que gasta un Cliente por compra es de ",PromedioCompras
+
+        FinAlgoritmo
