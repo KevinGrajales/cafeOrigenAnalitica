@@ -32,5 +32,96 @@ Los terminos son:  module.exports y require y se usan para exportar e importar d
 
 
 
+19 / 11 / 2026
+
+Mini reto 2.
+
+Indicadores en pseudocodigo.
+
+    - Cuanto se vendio:
+
+        Algoritmo venta
+
+    Definir ProductosVendidos Como Entero
+    Definir Producto Como Cadena
+    Definir cantidad Como Entero
+    Definir precio Como Entero
+    Definir TotalVendido Como Entero
+    Definir i Como Entero
+
+    TotalVendido <- 0
+
+    Escribir "Ingrese cuantos productos diferentes vendió"
+    Leer ProductosVendidos
+
+    Para i=1 Hasta ProductosVendidos Con Paso 1 Hacer
+
+        Escribir "Ingrese el producto que se vendió"
+        Leer Producto
+
+        Escribir "Ingrese la cantidad de ventas que tuvo el producto"
+        Leer Cantidad
+
+        Escribir "Ingrese el precio del producto que registró como vendido"
+        Leer precio
+
+        TotalVendido <- TotalVendido + (Cantidad*Precio)
+
+    Fin Para
+
+    Escribir "El total vendido es: ", TotalVendido
+
+FinAlgoritmo
 
 
+
+    - Cuantas unidades salieron:
+
+    Algoritmo UnidadesQueSalieron
+
+    Definir MateriaPrima Como Entero
+    Definir Porcion Como Entero
+    Definir Salieron Como Real
+
+    Escribir "Cuanta materia prima tiene (Ingrese en gramos)"
+    Leer MateriaPrima
+
+    Escribir "Con cuanta cantidad de cafe se llena una bolsa (Ingrese en gramos)"
+    Leer Porcion
+
+    Salieron <- MateriaPrima/Porcion
+
+    Escribir "Las unidades que salieron son: ",Salieron
+
+    Fin Algoritmo
+
+
+
+    - Cual fue la venta mas grande:
+
+   
+        Algoritmo VentaMasGrande
+
+            Definir CantidadVentas Como Entero
+            Definir venta Como Entero
+            Definir Temp Como Entero
+
+            Temp <- 0
+
+            Escribir "Ingrese la cantidad de ventas que realizó"
+            Leer CantidadVentas
+
+            Para i=1 Hasta CantidadVentas Con Paso 1 Hacer
+
+                Escribir "Ingrese el valor de la venta ", i
+                Leer venta
+
+                Si venta > Temp Entonces
+                    Temp <- venta
+                Fin Si
+
+            Fin Para
+
+            Escribir "La venta mas grande es: ", Temp
+
+        FinAlgoritmo
