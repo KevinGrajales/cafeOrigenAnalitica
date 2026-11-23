@@ -185,7 +185,12 @@ module.exports = {
     unidadesVendidas,
     unidadesVendidasM,
     VentasCiudad,
-    ventasPorCiudadM
+    ventasPorCiudadM,
+    valorVenta,
+    ventaMayor,
+    ticketPromedioVentas,
+    unidadesPorProducto,
+    topProductosPorValor
 };
 
 
@@ -206,6 +211,8 @@ function unidadesPorProducto(ventas) {
 
     return acum;
 }
+
+console.log("Unidades por producto ",unidadesPorProducto(ventas))
 
 // funcion los mayores registros por valor
 
@@ -233,3 +240,37 @@ function topProductosPorValor(ventas, k) {
     return productos.slice(0, k);
 }
 
+console.log("TOp ventas: ",topProductosPorValor(ventas,3))
+
+
+// Ventas del dia por fecha
+
+
+function ventasDelDia(ventas, fecha) {
+
+    let acum = {
+        cantidad: 0,
+        valor: 0
+    };
+
+    for (let v of ventas) {
+
+        if (v.fecha === fecha) {
+            acum.cantidad += v.cantidad;
+            acum.valor += valorVenta(v);
+        }
+
+    }
+
+    return acum;
+}
+
+
+const resultado = ventasDelDia(ventas, "2026-09-01");
+
+console.log("Unidades vendidas:", resultado.cantidad);
+
+console.log(
+    "Valor total:",
+    resultado.valor.toLocaleString("es-CO")
+);
