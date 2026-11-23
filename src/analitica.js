@@ -136,7 +136,100 @@ function VentasCiudad (ventas){
 
 }
 
+// Metodos de arreglos
+
+    // Metodo de arreglo reduce ---> metodo que acumula valores y retorna
+
+        // Total vendido con reduce
+
+function totalVendidoM(ventas) {
+    return ventas.reduce((total, v) => {
+        return total + valorVenta(v);
+    }, 0);
+}
+
+        // Unidades vendidas con reduce
+
+function unidadesVendidasM(ventas) {
+    return ventas.reduce((unidades, v) => {
+        return unidades + v.cantidad;
+    }, 0);
+}
 
 
+        //Ventas por ciudad con reduce
 
+function ventasPorCiudadM(ventas) {
+
+    return ventas.reduce((acum, v) => {
+
+        let ciudadNormalizada = v.ciudad.trim().toLowerCase();
+
+        if (acum[ciudadNormalizada] === undefined) {
+            acum[ciudadNormalizada] = 0;
+        }
+
+        acum[ciudadNormalizada] = acum[ciudadNormalizada] + valorVenta(v);
+
+        return acum;
+
+    }, {});
+}
+
+
+// Exportando las funciones para usar en verificar.js.
+
+module.exports = {
+    totalVendido,
+    totalVendidoM,
+    unidadesVendidas,
+    unidadesVendidasM,
+    VentasCiudad,
+    ventasPorCiudadM
+};
+
+
+// Función total de unidades por producto
+
+function unidadesPorProducto(ventas) {
+
+    let acum = {};
+
+    for (const v of ventas) {
+
+        if (acum[v.producto] === undefined) {
+            acum[v.producto] = 0;
+        }
+
+        acum[v.producto] += v.cantidad;
+    }
+
+    return acum;
+}
+
+// funcion los mayores registros por valor
+
+function topProductosPorValor(ventas, k) {
+
+    let acum = {};
+
+    
+    for (const v of ventas) {
+
+        if (acum[v.producto] === undefined) {
+            acum[v.producto] = 0;
+        }
+
+        acum[v.producto] += valorVenta(v);
+    }
+
+    
+    let productos = Object.entries(acum);
+
+    
+    productos.sort((a, b) => b[1] - a[1]);
+
+
+    return productos.slice(0, k);
+}
 
