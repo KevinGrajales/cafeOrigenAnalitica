@@ -155,4 +155,51 @@ FinAlgoritmo
         PromedioCompras <- TotalCompras / CantidadCompras
         Escribir "El promedio que gasta un Cliente por compra es de ",PromedioCompras
 
-        FinAlgoritmo
+
+
+        22 / 11 / 2026
+
+        Casos especiales con el arreglo vacio:
+
+        - Ventas mayores con arreglo vacio genera null, ya que la funcion hace una comparacion entre 2 registros y al ingresar 0, la funcion no tien que calcular, esta linea hace que retorne null: if (ventas.length === 0) return null;
+
+        - Ventas x ciudad retorna : {}, ya que requiere recibir un arreglo para devoler otro, si no se ingresa nada, en este caso devuelve el arreglo vacio.
+
+        - En los demas casos retorna 0.
+
+
+        --- Tabla de traza - Total Vendido.
+
+       Iteración   ID venta   Operación (cantidad × precio)   Valor venta   Acumulado
+
+        Inicial     -          -                                -             $0
+            1       1          2 × 42.000                       $84.000       $84.000
+            2       2          1 × 26.000                       $26.000       $110.000
+            3       3          1 × 95.000                       $95.000       $205.000
+            4       4          1 × 42.000                       $42.000       $247.000
+            5       5          3 × 45.000                       $135.000      $382.000
+            6       6          2 × 26.000                       $52.000       $434.000
+            7       7          1 × 120.000                      $120.000      $554.000
+            8       8          0 × 42.000                       $0            $554.000
+            9       9          2 × 45.000                       $90.000       $644.000
+            10      10         4 × 42.000                       $168.000      $812.000
+            11      11         1 × 95.000                       $95.000       $907.000
+            12      12         3 × 26.000                       $78.000       $985.000
+
+
+        --- Tabla de traza - Unidades Vendidas.
+
+        Iteración   ID venta   Cantidad (v.cantidad)   Unidades acumuladas
+        Inicial     -          -                       0
+            1       1          2                       2
+            2       2          1                       3
+            3       3          1                       4
+            4       4          1                       5
+            5       5          3                       8
+            6       6          2                       10
+            7       7          1                       11
+            8       8          0                       11
+            9       9          2                       13
+            10      10         4                       17
+            11      11         1                       18
+            12      12         3                       21 
