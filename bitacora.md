@@ -203,3 +203,112 @@ FinAlgoritmo
             10      10         4                       17
             11      11         1                       18
             12      12         3                       21 
+
+
+
+        23 / 11 / 2026
+
+        Respondo: ¿qué recorro?, ¿qué filtro?, ¿qué transformo?, ¿qué acumulo?, ¿cómo agrupo? de cada funcion.
+
+        valorVenta(venta):
+        
+        - ¿Qué recorro? No recorro ningún arreglo. Recibo un objeto de venta.
+        - ¿Qué filtro? No uso filtros en esta función.
+        - ¿Qué transformo? Multiplico la cantidad por el precio para obtener el valor total de una venta.
+        - ¿Qué acumulo? No acumulo valores.
+        - ¿Cómo agrupo? No agrupo en esta función
+
+
+        totalVendido(ventas):
+
+        - ¿Qué recorro? El arreglo ventas, utilizando un ciclo for...of.
+        - ¿Qué filtro? No filtro ningún registro.
+        - ¿Qué transformo? Calculo el valor monetario de cada venta mediante valorVenta().
+        - ¿Qué acumulo? El valor monetario de todas las ventas.
+        - ¿Cómo agrupo? No agrupo registros; obtengo un único total.
+
+
+        totalVendidoM(ventas):
+
+        - ¿Qué recorro? El arreglo ventas mediante el método reduce().
+        - ¿Qué filtro? No filtro registros.
+        - ¿Qué transformo? Calculo el valor de cada venta con valorVenta().
+        - ¿Qué acumulo? El dinero generado por todas las ventas mediante un acumulador.
+        - ¿Cómo agrupo? No agrupo; obtengo un único resultado.
+
+
+        unidadesVendidas(ventas):
+
+        - ¿Qué recorro? El arreglo ventas mediante for...of.
+        - ¿Qué filtro? No filtro registros.
+        - ¿Qué transformo? No transformo los registros; accedo a su propiedad cantidad.
+        - ¿Qué acumulo? Las unidades vendidas de todos los registros.
+        - ¿Cómo agrupo? No agrupo; obtengo el total de unidades.
+
+
+        unidadesVendidasM(ventas):
+
+        - ¿Qué recorro? El arreglo ventas mediante reduce().
+        - ¿Qué filtro? No filtro registros.
+        - ¿Qué transformo? No transformo los registros; obtengo la propiedad cantidad.
+        - ¿Qué acumulo? Las cantidades de todas las ventas.
+        - ¿Cómo agrupo? No agrupo; obtengo un único total.
+
+
+        ventaMayor(ventas):
+
+        - ¿Qué recorro? El arreglo ventas mediante for...of.
+        - ¿Qué filtro? No filtro registros.
+        - ¿Qué transformo? Calculo el valor monetario de cada venta utilizando valorVenta().
+        - ¿Qué acumulo? No sumo valores; conservo el registro que tenga el valor más alto.
+        - ¿Cómo agrupo? No agrupo registros.
+
+        ticketPromedioVentas(ventas):
+
+        Según la implementación que construimos, divides el dinero total entre las unidades vendidas.
+        - ¿Qué recorro? El arreglo ventas mediante for...of.
+        - ¿Qué filtro? Compruebo que la cantidad y el valor de la venta sean diferentes de cero.
+        - ¿Qué transformo? Calculo el valor monetario de cada venta mediante valorVenta().
+        - ¿Qué acumulo? El dinero total y las unidades vendidas.
+        - ¿Cómo agrupo? No agrupo registros; utilizo los acumulados para calcular el promedio.
+
+        ventasPorCiudad(ventas):
+        
+        - ¿Qué recorro? El arreglo ventas mediante for...of.
+        - ¿Qué filtro? No filtro registros.
+        - ¿Qué transformo? Normalizo los nombres de las ciudades utilizando trim() y toLowerCase().
+        - ¿Qué acumulo? El valor monetario de las ventas de cada ciudad.
+        - ¿Cómo agrupo? Utilizo la ciudad normalizada como clave del objeto acumulador.
+
+        ventasPorCiudadM(ventas):
+
+        - ¿Qué recorro? El arreglo ventas mediante reduce().
+        - ¿Qué filtro? No filtro registros.
+        - ¿Qué transformo? Normalizo los nombres de las ciudades con trim() y toLowerCase().
+        - ¿Qué acumulo? El valor monetario de las ventas de cada ciudad.
+        - ¿Cómo agrupo? Utilizo un objeto acumulador cuyas propiedades representan las ciudades.
+
+        totalPorCiudad(ventas):
+
+        Si la implementaste con la misma lógica de ventasPorCiudad():
+        - ¿Qué recorro? El arreglo ventas.
+        - ¿Qué filtro? No filtro registros.
+        - ¿Qué transformo? Normalizo los nombres de las ciudades para evitar diferencias por espacios o mayúsculas.
+        - ¿Qué acumulo? El dinero generado por las ventas de cada ciudad.
+        - ¿Cómo agrupo? Por ciudad, utilizando un objeto como acumulador.
+
+        unidadesPorProducto(ventas):
+        
+        - ¿Qué recorro? El arreglo ventas mediante for...of.
+        - ¿Qué filtro? No filtro registros.
+        - ¿Qué transformo? No transformo los registros; accedo a la propiedad producto.
+        - ¿Qué acumulo? Las cantidades vendidas de cada producto.
+        - ¿Cómo agrupo? Utilizo el nombre del producto como clave del objeto acumulador.
+
+        topProductosPorValor(ventas, k):
+
+        - ¿Qué recorro? El arreglo ventas mediante for...of para procesar cada registro.
+        - ¿Qué filtro? Selecciono los primeros k productos después de ordenarlos, utilizando slice().
+        - ¿Qué transformo? Convierto el objeto acumulador en un arreglo mediante Object.entries() y ordeno sus elementos con sort().
+        - ¿Qué acumulo? El dinero generado por cada producto.
+        - ¿Cómo agrupo? Agrupo las ventas por nombre de producto y sumo el valor monetario de cada uno.
