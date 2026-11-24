@@ -1,16 +1,5 @@
 
-No se seleccionó ningún elemento 
 
-Ir al contenido
-Cómo usar Gmail con lectores de pantalla
-1 de 630
-ytyyuuy
-Kevin Grajales <kevingrajalescamacho@gmail.com>
-	
-7:35 a.m. (hace 5 horas)
-	
-	
-para kevingrajales297121
 # Cafe Origen.
 
     Café Origen es una tostadora de café de especialidad de Medellín que vende en su tienda física, en ferias y por pedidos en línea a varias ciudades del país. Hoy lleva sus ventas en hojas de cálculo y nadie sabe responder con certeza preguntas como “¿cuál fue nuestro producto más vendido?” o “¿qué ciudad nos compra más?”. Tú trabajas como desarrollador(a) junior en Nodo Digital, la agencia que acaba de firmar con Café Origen la construcción de su motor de analítica. Esta semana no construirás pantallas: construirás la lógica que responde preguntas de negocio sobre los datos, y la harás cada vez más eficiente. Durante toda la semana trabajarás sobre el mismo repositorio, y cada MiniReto agregará una parte del producto final.
