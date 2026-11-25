@@ -312,3 +312,10 @@ FinAlgoritmo
         - ¿Qué transformo? Convierto el objeto acumulador en un arreglo mediante Object.entries() y ordeno sus elementos con sort().
         - ¿Qué acumulo? El dinero generado por cada producto.
         - ¿Cómo agrupo? Agrupo las ventas por nombre de producto y sumo el valor monetario de cada uno.
+
+
+        // 24 - 11 - 2026
+
+        En la reproduccion de errores que la gerente reporto, encontre que el error de la duplicacion de bogota ocurria porque las ciudades no estaban normalizadas y el error de ticket NaN se da porque si el cliente filtra un dia sin ventas, claramente no tiene datos para hacer un promedio.
+
+        

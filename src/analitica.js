@@ -177,6 +177,8 @@ function ventasPorCiudadM(ventas) {
 }
 
 
+      
+
 // Exportando las funciones para usar en verificar.js.
 
 module.exports = {
