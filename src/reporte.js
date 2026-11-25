@@ -66,4 +66,13 @@ console.log("==============================================");
 
 
 
+const array1 = [2,4,5,8]
+const array2 = array1
+
+array1.pop()
+
+console.log("aray 1: ",array1)
+console.log("array2: ",array2)
+
+
 

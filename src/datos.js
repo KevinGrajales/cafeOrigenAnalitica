@@ -18,3 +18,8 @@ const ventas = [
 ];
 
 module.exports = ventas;
+
+
+// Creo listas de productos y ciudades para llenar el generador aleatorio
+
+

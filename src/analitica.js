@@ -192,7 +192,8 @@ module.exports = {
     ventaMayor,
     ticketPromedioVentas,
     unidadesPorProducto,
-    topProductosPorValor
+    topProductosPorValor,
+    totalVendidoInstrumentda
 };
 
 
@@ -276,3 +277,15 @@ console.log(
     "Valor total:",
     resultado.valor.toLocaleString("es-CO")
 );
+
+
+function totalVendidoInstrumentda(ventas, contador) {
+    let total = 0;
+
+    for (const v of ventas) {
+        contador.ops++
+        total += valorVenta(v);
+    }
+
+    return total;
+}
