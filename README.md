@@ -3,11 +3,11 @@
 
 # Cafe Origen.
 
- Café Origen es una tostadora de café de especialidad de Medellín que vende en su tienda física, en ferias y por pedidos en línea a varias ciudades del país. Hoy lleva sus ventas en hojas de cálculo y nadie sabe responder con certeza preguntas como “¿cuál fue nuestro producto más vendido?” o “¿qué ciudad nos compra más?”. Tú trabajas como desarrollador(a) junior en Nodo Digital, la agencia que acaba de firmar con Café Origen la construcción de su motor de analítica. Esta semana no construirás pantallas: construirás la lógica que responde preguntas de negocio sobre los datos, y la harás cada vez más eficiente. Durante toda la semana trabajarás sobre el mismo repositorio, y cada MiniReto agregará una parte del producto final.
+Café Origen es una tostadora de café de especialidad de Medellín que vende en su tienda física, en ferias y por pedidos en línea a varias ciudades del país. Hoy lleva sus ventas en hojas de cálculo y nadie sabe responder con certeza preguntas como “¿cuál fue nuestro producto más vendido?” o “¿qué ciudad nos compra más?”. Tú trabajas como desarrollador(a) junior en Nodo Digital, la agencia que acaba de firmar con Café Origen la construcción de su motor de analítica. Esta semana no construirás pantallas: construirás la lógica que responde preguntas de negocio sobre los datos, y la harás cada vez más eficiente. Durante toda la semana trabajarás sobre el mismo repositorio, y cada MiniReto agregará una parte del producto final.
 =======
 # Cafe Origen.
 
-    Café Origen es una tostadora de café de especialidad de Medellín que vende en su tienda física, en ferias y por pedidos en línea a varias ciudades del país. Hoy lleva sus ventas en hojas de cálculo y nadie sabe responder con certeza preguntas como “¿cuál fue nuestro producto más vendido?” o “¿qué ciudad nos compra más?”. Tú trabajas como desarrollador(a) junior en Nodo Digital, la agencia que acaba de firmar con Café Origen la construcción de su motor de analítica. Esta semana no construirás pantallas: construirás la lógica que responde preguntas de negocio sobre los datos, y la harás cada vez más eficiente. Durante toda la semana trabajarás sobre el mismo repositorio, y cada MiniReto agregará una parte del producto final.
+Café Origen es una tostadora de café de especialidad de Medellín que vende en su tienda física, en ferias y por pedidos en línea a varias ciudades del país. Hoy lleva sus ventas en hojas de cálculo y nadie sabe responder con certeza preguntas como “¿cuál fue nuestro producto más vendido?” o “¿qué ciudad nos compra más?”. Tú trabajas como desarrollador(a) junior en Nodo Digital, la agencia que acaba de firmar con Café Origen la construcción de su motor de analítica. Esta semana no construirás pantallas: construirás la lógica que responde preguntas de negocio sobre los datos, y la harás cada vez más eficiente. Durante toda la semana trabajarás sobre el mismo repositorio, y cada MiniReto agregará una parte del producto final.
 >>>>>>> 3920884 (Crea y desarrolla README)
 
 # Objetivos específicos.
@@ -21,10 +21,10 @@ Integrar las funciones en un primer reporte por consola y depurar errores de for
 
 # ¿Cómo ejecutar el proyecto?
 =======
-    Modelar el historial de ventas como un arreglo de objetos y explorarlo para detectar casos borde antes de programar.
-    Calcular indicadores básicos de negocio con ciclos manuales y los patrones contador, acumulador y máximo.
-    Reescribir las soluciones con métodos de arreglo y construir rankings y agrupaciones.
-    Integrar las funciones en un primer reporte por consola y depurar errores de forma sistemática.
+Modelar el historial de ventas como un arreglo de objetos y explorarlo para detectar casos borde antes de programar.
+Calcular indicadores básicos de negocio con ciclos manuales y los patrones contador, acumulador y máximo.
+Reescribir las soluciones con métodos de arreglo y construir rankings y agrupaciones.
+Integrar las funciones en un primer reporte por consola y depurar errores de forma sistemática.
 
     ¿Cómo ejecutar el proyecto?
 >>>>>>> 3920884 (Crea y desarrolla README)
