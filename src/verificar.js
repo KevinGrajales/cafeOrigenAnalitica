@@ -8,7 +8,8 @@ const {
     unidadesVendidas,
     unidadesVendidasM,
     VentasCiudad,
-    ventasPorCiudadM
+    ventasPorCiudadM,
+    clientesRecurrentes
 } = require('./analitica');
 
 
@@ -44,3 +45,12 @@ if (ventasCiudadCiclo === ventasCiudadMetodo) {
 } else {
     console.log("Ventas por ciudad: DIFERENTE");
 }
+
+
+
+
+  console.log("Clientes recurrentes:", clientesRecurrentes(ventas));
+
+
+
+  
