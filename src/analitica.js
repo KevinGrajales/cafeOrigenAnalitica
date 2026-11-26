@@ -179,22 +179,25 @@ function ventasPorCiudadM(ventas) {
 
       
 
-// Exportando las funciones para usar en verificar.js.
+        // Exportando las funciones para usar en verificar.js.
 
-module.exports = {
-    totalVendido,
-    totalVendidoM,
-    unidadesVendidas,
-    unidadesVendidasM,
-    VentasCiudad,
-    ventasPorCiudadM,
-    valorVenta,
-    ventaMayor,
-    ticketPromedioVentas,
-    unidadesPorProducto,
-    topProductosPorValor,
-    totalVendidoInstrumentda
-};
+        module.exports = {
+            totalVendido,
+            totalVendidoM,
+            unidadesVendidas,
+            unidadesVendidasM,
+            VentasCiudad,
+            ventasPorCiudadM,
+            valorVenta,
+            ventaMayor,
+            ticketPromedioVentas,
+            unidadesPorProducto,
+            topProductosPorValor,
+            totalVendidoInstrumentada,
+            ventaMayorInstrumentada,
+            VentasCiudadInstrumentada,
+            primeraVenta,
+        };
 
 
 // Función total de unidades por producto
@@ -268,6 +271,7 @@ function ventasDelDia(ventas, fecha) {
     return acum;
 }
 
+// impresion en formato COP
 
 const resultado = ventasDelDia(ventas, "2026-09-01");
 
@@ -279,7 +283,9 @@ console.log(
 );
 
 
-function totalVendidoInstrumentda(ventas, contador) {
+// Funcion Total Vendido instrumentada
+
+function totalVendidoInstrumentada(ventas, contador) {
     let total = 0;
 
     for (const v of ventas) {
@@ -289,3 +295,54 @@ function totalVendidoInstrumentda(ventas, contador) {
 
     return total;
 }
+
+// Funcion venta mayor instrumentada
+
+function ventaMayorInstrumentada(ventas, contador) {
+    if (ventas.length === 0) return null;
+
+    let mayor = ventas[0];
+
+    for (const v of ventas) {
+        contador.ops++
+        if (valorVenta(v) > valorVenta(mayor)) mayor = v;
+    }
+
+    return mayor;
+}
+
+
+// Funcion ventas por ciudad Instrumentada
+
+function VentasCiudadInstrumentada (ventas, contador){
+
+    let ciudadNormalizada = "";
+    let acum = {};
+
+    for(const v of ventas){
+        contador.ops++
+     ciudadNormalizada = v.ciudad.trim().toLowerCase()   
+
+        if (acum[ciudadNormalizada] === undefined) {
+        acum[ciudadNormalizada] = 0;
+         }
+
+     acum[ciudadNormalizada] = acum[ciudadNormalizada] + valorVenta(v)
+
+    }
+
+    return acum;
+
+}
+
+
+// Funcion primera venta, complejidad constante.
+
+function primeraVenta(ventas, contador) {
+  contador.ops++;
+
+  if (ventas.length === 0) return null;
+
+  return ventas[0];
+}
+

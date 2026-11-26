@@ -18,7 +18,7 @@ const CIUDADES = [
     "Bogotá",
     "Cali",
     "Pereira"
-];+
+];
 
 
 
@@ -40,13 +40,13 @@ function generarVentas(n) {
         const p = PRODUCTOS[azar(0, PRODUCTOS.length - 1)];
         const c = CIUDADES[azar(0, CIUDADES.length - 1)];
         const numClientes = azar(1, MaxClientes);
-        const dia =String(azar(1,10).padStart(2, "0"));
-        const mes=String(azar(9, 12).padStart(2, "0"));
+        const dia = String(azar(1, 10)).padStart(2, "0");
+        const mes = String(azar(9, 12)).padStart(2, "0");
 
         ventas.push({
             id: i,
             fecha: `2026-${mes}-${dia}`,
-            cliente: `C${Sting(numClientes).padStart(2, "0")}`,
+            cliente: `C${String(numClientes).padStart(2, "0")}`,
             producto: p.producto,
             ciudad: c,
             cantidad: azar(1, 5),
@@ -56,7 +56,7 @@ function generarVentas(n) {
     return ventas;
 }
 
-
+module.exports = {generarVentas};
 
 
 

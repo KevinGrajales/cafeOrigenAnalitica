@@ -316,6 +316,20 @@ FinAlgoritmo
 
         // 24 - 11 - 2026
 
-        En la reproduccion de errores que la gerente reporto, encontre que el error de la duplicacion de bogota ocurria porque las ciudades no estaban normalizadas y el error de ticket NaN se da porque si el cliente filtra un dia sin ventas, claramente no tiene datos para hacer un promedio.
+        En la reproduccion de errores que la gerente reporto, encontré que el error de la duplicacion de bogota ocurria porque las ciudades no estaban normalizadas y el error de ticket NaN se da porque si el cliente filtra un dia sin ventas, claramente no tiene datos para hacer un promedio.
 
         
+        // 26 - 11 - 2026
+
+        Si n se multiplica por 10, se espera que las operaciones de totalVendido se multipliquen por 10, porque visita cada venta una vez, es decir es lineal.
+        
+        En ventaMayor, las comparaciones pasan de n - 1 a 10n - 1.
+
+        En totalPorCiudad, ccontando una visita y una comparación por venta, las operaciones son 2n, por lo que también se multiplican por 10.
+
+
+        Despues de comparar resultados obtuve que:
+
+        O(1), constante: no crece al aumentar n. Ejemplo: primeraVenta(ventas) siempre es 1
+        O(n), lineal: crece proporcionalmente a n. Ejemplo: recorrer todas las ventas una vez. crece 10 veces.
+        O(n²), cuadrática: suele ocurrir cuando hay un ciclo dentro de otro que recorre los datos, crece 100 veces.

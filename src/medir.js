@@ -9,7 +9,20 @@ for (const n of muestra){
     const contador1 = {ops:0};
     const contador2 = {ops:0};
     const contador3 = {ops:0};
-    const contador4 = {ops:0};
-    analitica.totalVendidoInstrumentda(lote, contador1);
+    const contador4 = { ops: 0 };
 
+    analitica.totalVendidoInstrumentada(lote, contador1);
+    analitica.ventaMayorInstrumentada(lote, contador2);
+    analitica.VentasCiudadInstrumentada(lote, contador3);
+    analitica.primeraVenta(lote, contador4);
+
+ resultados.push({
+    n: n,
+    totalVendidoInstrumentada: contador1.ops,
+    ventaMayorInstrumentada: contador2.ops,
+    VentasCiudadInstrumentada: contador3.ops,
+    primeraVenta: contador4.ops
+  });
 }
+
+console.table(resultados);
