@@ -333,3 +333,65 @@ FinAlgoritmo
         O(1), constante: no crece al aumentar n. Ejemplo: primeraVenta(ventas) siempre es 1
         O(n), lineal: crece proporcionalmente a n. Ejemplo: recorrer todas las ventas una vez. crece 10 veces.
         O(n²), cuadrática: suele ocurrir cuando hay un ciclo dentro de otro que recorre los datos, crece 100 veces.
+
+
+
+    Análisis de los tiempos: Observe que cuando aumenta la cantidad de ventas, también aumenta el tiempo que tarda la función. Cuando se duplica la cantidad de ventas, el tiempo tiende a crecer cuatro veces.
+
+
+    Estimación para cantidades mayores: Tome como referencia el tiempo medido con 16.000 ventas, y llegue a la conclusion que el tiempo crece aproximadamente siguiendo el mismo comportamiento que detalle anteriormente.
+
+    Estimacion con 100.000 y 1.000.0000:
+
+       100.000 ventas: 42.341 segundos
+       1.000.000 de ventas: NaN
+
+
+    Con 100.000 ventas tuve que esperar menos de 1 minuto, sigue siendo una prueba eficiente, pero con 1.000.000 de ventas se demora demasiado, segun los calculos:
+
+    Usando O(n²): 100.000 = 10**2, por lo que al multiplicar las ventas por 10, el tiempo se multiplicaría por 100.
+    42,341 × 100 = 4.234,1 segundos, aproximadamente 70 minutos y 34 segundos. 
+
+
+
+    La función utiliza recurrentes.includes() para revisar si un cliente ya fue agregado a la lista de clientes recurrentes. Para hacerlo, busca dentro del arreglo y puede tener que revisar muchos elementos antes de encontrarlo o confirmar que no está.
+
+    Esta búsqueda representa revisa el arreglo cada vez que se necesita comprobar un cliente. Como ocurre dentro de los ciclos que comparan las ventas, puede hacer que la función tarde todavía más y que su crecimiento llegue a ser de tipo O(n³).
+
+
+    Conclusión para la gerente
+
+    El reporte se vuelve lento porque, a medida que aumenta la cantidad de ventas, el sistema debe revisar muchas más combinaciones para encontrar los clientes recurrentes. Además, cada vez que encuentra un posible cliente repetido, debe buscar si ya lo había agregado a la lista. Por eso, cuando hay muchas ventas, el reporte necesita más tiempo para terminar.
+
+
+   
+
+     Comparación de las funciones para calcular el total por ciudad:
+
+        Para comprobar que las dos versiones calculan el mismo resultado, generé un arreglo de 10.000 ventas y ejecuté ambas funciones con la ciudad Medellín.
+
+            - Total con la cadena de métodos: 476204000
+            - Total con una pasada: 476204000 
+            - ¿Coinciden?: true
+
+        Los dos resultados deben ser iguales, porque ambas funciones calculan el valor de las ventas correspondientes a la ciudad indicada.
+
+
+
+
+     Arreglos nuevos de ciudades:
+
+
+        En la funcion totalCiudadCadena use map para guardar el nuevo arreglo con la ciudad y el valor total de ventas de la ciudad, use filter para seleccionar la
+        ciudad que se ingrese y use reduce para acomular los valores de las ventas.
+
+        La función totalCiudadUnaPasada utiliza un solo ciclo, un recorrido del arreglo.
+
+        Aunque totalCiudadCadena recorre los datos cuatro veces, cada recorrido depende de la cantidad de ventas. Si hay n ventas, realiza aproximadamente cuatro veces esa cantidad de trabajo.
+
+
+    Conclusión
+
+        La cantidad de datos influye tanto en el tiempo como en la memoria que necesita el reporte. La versión encadenada permite expresar las operaciones de forma clara, pero crea arreglos intermedios. La versión de una pasada obtiene el mismo resultado con menos recorridos y sin esos arreglos adicionales.
+
+        Por esta razón, elegiré la versión de una pasada para el motor, buscando que el reporte utilice mejor los recursos cuando aumente la cantidad de ventas.

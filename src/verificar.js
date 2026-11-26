@@ -1,6 +1,7 @@
 // Imporrtando datos y funciones.
 
 const ventas = require('./datos');
+const { generarVentas } = require('./generador');
 
 const {
     totalVendido,
@@ -9,7 +10,9 @@ const {
     unidadesVendidasM,
     VentasCiudad,
     ventasPorCiudadM,
-    clientesRecurrentes
+    clientesRecurrentes,
+    totalCiudadCadena,
+    totalCiudadUnaPasada
 } = require('./analitica');
 
 
@@ -53,4 +56,11 @@ if (ventasCiudadCiclo === ventasCiudadMetodo) {
 
 
 
-  
+  const lote = generarVentas(10000);
+
+const cadena = totalCiudadCadena(lote, "Medellín");
+const unaPasada = totalCiudadUnaPasada(lote, "Medellín");
+
+console.log("Total con cadena:", cadena);
+console.log("Total con una pasada:", unaPasada);
+console.log("¿Coinciden?", cadena === unaPasada);

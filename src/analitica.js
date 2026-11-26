@@ -197,7 +197,9 @@ function ventasPorCiudadM(ventas) {
             ventaMayorInstrumentada,
             VentasCiudadInstrumentada,
             primeraVenta,
-            clientesRecurrentes
+            clientesRecurrentes,
+            totalCiudadCadena,
+            totalCiudadUnaPasada
         };
 
 
@@ -364,5 +366,35 @@ function clientesRecurrentes(ventas) {
   }
 
   return recurrentes;
+}
+
+
+function totalCiudadCadena(ventas, ciudad) {
+  const ciudadBuscada = ciudad.trim().toLowerCase();
+
+  return ventas
+    .map(venta => ({
+      ...venta,
+      ciudad: venta.ciudad.trim().toLowerCase()
+    }))
+    .filter(venta => venta.ciudad === ciudadBuscada)
+    .map(venta => valorVenta(venta))
+    .reduce((total, valor) => total + valor, 0);
+}
+
+
+function totalCiudadUnaPasada(ventas, ciudad) {
+  const ciudadBuscada = ciudad.trim().toLowerCase();
+  let total = 0;
+
+  for (const venta of ventas) {
+    const ciudadVenta = venta.ciudad.trim().toLowerCase();
+
+    if (ciudadVenta === ciudadBuscada) {
+      total += venta.cantidad * venta.precio;
+    }
+  }
+
+  return total;
 }
 
