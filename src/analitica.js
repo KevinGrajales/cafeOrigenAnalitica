@@ -4,6 +4,33 @@
 
 const ventas = require('./datos');
 
+
+
+ // Exportando las funciones para usar en verificar.js.
+
+        module.exports = {
+            totalVendido,
+            totalVendidoM,
+            unidadesVendidas,
+            unidadesVendidasM,
+            VentasCiudad,
+            ventasPorCiudadM,
+            valorVenta,
+            ventaMayor,
+            ticketPromedioVentas,
+            unidadesPorProducto,
+            topProductosPorValor,
+            ventasDelDia,
+            totalVendidoInstrumentada,
+            ventaMayorInstrumentada,
+            VentasCiudadInstrumentada,
+            primeraVenta,
+            clientesRecurrentes,
+            totalCiudadCadena,
+            totalCiudadUnaPasada
+        };
+
+
 // variables para hacer las pruebas con todas las funciones
 
 const unaVenta = [ventas[0]];
@@ -40,6 +67,7 @@ console.log("Ventas x ciudad con ventas vacias: ",VentasCiudad(ventasVacias));
 console.log("Ventas x ciudad con todas las ventas: ",VentasCiudad(ventas));
 
 
+// Funcion que calcula el total de la venta.
 
 function valorVenta(venta) {
     return venta.cantidad * venta.precio;
@@ -47,6 +75,7 @@ function valorVenta(venta) {
 
 console.log(valorVenta(ventas[9]));
 
+// Funcion que calcula el total vendido
 
 function totalVendido(ventas) {
     let total = 0;
@@ -77,8 +106,6 @@ function unidadesVendidas(ventas){
 
 
 
-
-
 // Funcion venta mayor
 
 function ventaMayor(ventas) {
@@ -94,8 +121,6 @@ function ventaMayor(ventas) {
 }
 
 
-
-
 // Funcion promedio de ventas
 
 function ticketPromedioVentas(ventas) {
@@ -109,8 +134,6 @@ function ticketPromedioVentas(ventas) {
 
     return PromedioCompras;
 }
-
-
 
 
 // Funcion ventas por ciudad
@@ -179,29 +202,7 @@ function ventasPorCiudadM(ventas) {
 
       
 
-        // Exportando las funciones para usar en verificar.js.
-
-        module.exports = {
-            totalVendido,
-            totalVendidoM,
-            unidadesVendidas,
-            unidadesVendidasM,
-            VentasCiudad,
-            ventasPorCiudadM,
-            valorVenta,
-            ventaMayor,
-            ticketPromedioVentas,
-            unidadesPorProducto,
-            topProductosPorValor,
-            totalVendidoInstrumentada,
-            ventaMayorInstrumentada,
-            VentasCiudadInstrumentada,
-            primeraVenta,
-            clientesRecurrentes,
-            totalCiudadCadena,
-            totalCiudadUnaPasada
-        };
-
+       
 
 // Función total de unidades por producto
 
@@ -349,7 +350,7 @@ function primeraVenta(ventas, contador) {
   return ventas[0];
 }
 
-
+// Funcion que grega ventas dependieque busca los clientes
 
 function clientesRecurrentes(ventas) {
   const recurrentes = [];
@@ -368,6 +369,9 @@ function clientesRecurrentes(ventas) {
   return recurrentes;
 }
 
+ 
+
+// Funcion que normaliza las ciudades y calculo su total con metodos de arreglo.
 
 function totalCiudadCadena(ventas, ciudad) {
   const ciudadBuscada = ciudad.trim().toLowerCase();
@@ -383,6 +387,8 @@ function totalCiudadCadena(ventas, ciudad) {
 }
 
 
+// Funcion que normaliza las ciudades y calculo su total con un ciclo
+
 function totalCiudadUnaPasada(ventas, ciudad) {
   const ciudadBuscada = ciudad.trim().toLowerCase();
   let total = 0;
@@ -391,7 +397,7 @@ function totalCiudadUnaPasada(ventas, ciudad) {
     const ciudadVenta = venta.ciudad.trim().toLowerCase();
 
     if (ciudadVenta === ciudadBuscada) {
-      total += venta.cantidad * venta.precio;
+      total += valorVenta(venta);
     }
   }
 

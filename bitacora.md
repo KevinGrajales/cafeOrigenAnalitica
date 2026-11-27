@@ -395,3 +395,10 @@ FinAlgoritmo
         La cantidad de datos influye tanto en el tiempo como en la memoria que necesita el reporte. La versión encadenada permite expresar las operaciones de forma clara, pero crea arreglos intermedios. La versión de una pasada obtiene el mismo resultado con menos recorridos y sin esos arreglos adicionales.
 
         Por esta razón, elegiré la versión de una pasada para el motor, buscando que el reporte utilice mejor los recursos cuando aumente la cantidad de ventas.
+
+
+    // 27 / 11 / 2026
+
+    Desarrollo Rendimiento.md, donde evaluo el tiempo que tarda en ejecutarse cada funcion con 10.000 ventas.
+
+            pd: la organizacion de las tablas la hice con IA para mayor agilidad, pero los resultados se calculan en medir y todo concuerdan con lo escrito en la tabla.. 

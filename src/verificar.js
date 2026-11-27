@@ -50,12 +50,14 @@ if (ventasCiudadCiclo === ventasCiudadMetodo) {
 }
 
 
-
+// impresion de clientes recurrentes
 
   console.log("Clientes recurrentes:", clientesRecurrentes(ventas));
 
 
 
+  // Impresion de las funciones de normalizacion con metodos de arreglo y con ciclo
+  
   const lote = generarVentas(10000);
 
 const cadena = totalCiudadCadena(lote, "Medellín");
