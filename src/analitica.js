@@ -3,6 +3,7 @@
 // Funcion ValorVenta
 
 const ventas = require('./datos');
+const catalogo = require('./catalogo');
 
 
 
@@ -403,4 +404,34 @@ function totalCiudadUnaPasada(ventas, ciudad) {
 
   return total;
 }
+
+
+function ComboRegalo1(catalogo, valor) {
+  const sugerencias = [];
+
+  for (let i = 0; i < catalogo.length; i++) {
+    for (let j = i + 1; j < catalogo.length; j++) {
+      const suma = catalogo[i].precio + catalogo[j].precio;
+
+      if (suma === valor) {
+        sugerencias.push({
+          producto1: catalogo[i].producto,
+          producto2: catalogo[j].producto,
+          suma: suma
+        });
+      }
+    }
+  }
+
+  return sugerencias;
+}
+
+
+console.log(
+  "Combinaciones que cumplen el combo:",
+  ComboRegalo1(catalogo, 87000)
+);
+
+
+
 
