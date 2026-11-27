@@ -402,3 +402,82 @@ FinAlgoritmo
     Desarrollo Rendimiento.md, donde evaluo el tiempo que tarda en ejecutarse cada funcion con 10.000 ventas.
 
             pd: la organizacion de las tablas la hice con IA para mayor agilidad, pero los resultados se calculan en medir y todo concuerdan con lo escrito en la tabla.. 
+
+
+    -- Dia 3 Semana 1
+
+
+    ----- Método de 6 pasos ------
+
+    Voy a aplicar el metodo de 6 pasos a la funcion ClientesRecurrentesSet - Evitar repetir clientes
+
+     ***Entender: En esta funcion se busca determinar los clientes que estan una sola vez en la lista de ventas, y al final mostrarlos como salida. La idea es hacerlo como anotandolo en una libreta y marcando los que vaya encontrando para no seguir buscando mas ese cliente. 
+            
+     ***Casos borde: Que un cliente este mas de una vez con diferentes ventas y una de las ventas se pierda.
+
+     ***Fuerza bruta: Tal vez lo mas directo que sea utilizar el clientesRecurrentes que se implemento en la sesion anterior, ya que este usa el recurrentes.includes() que compara directamente si un cliente esta incluido en el arreglo de ventas.
+
+     ***Optimizar: Lo que se busca eliminar es que la funcion compare 1 cliente con los demas, porque si la cantidad de clientes es demasiado alta, el proceso tendra que hacer miles de comparaciones, por lo contario, si un cliente ya existe sacarlo 
+
+     ***Implementar: lo hare en pseudocodigo:
+
+            Definir resultado como Cadena
+            Definir clienteA  como Cadena
+            Definir ClientesExistentes como arreglo
+
+            funcion BuscarCliente (ventas, cliente):
+
+                para (v de ventas)
+                si (v.cliente == clienteA) entonces
+
+                resultado = v.cliente
+                ventas(v.cliente).Eliminar
+                ClientesExistentes = v.cliente
+
+                Retronar resultado
+
+                Escribir "El cliente ",resultado, " se agrego a los existentes"
+
+                Nota: En clienteA se ingresa por consola un cliente una unica vez por lo que si ya encuentra uno, lo agrega a los existentes y no vuelve a ingresar ese cliente mas, por lo que si hay repetidos, estos quedaran en el arreglo original y al final se eliminaran.
+
+     ***Pruebas: 
+
+
+     Comparación de clientes recurrentes.
+
+        Se verificó que las tres versiones original, optimizada con Set  y optimizada con Map identificaran los mismos clientes recurrentes utilizando los datos del Día 1 y 5.000 ventas generadas.
+
+
+    Para realizar la comparación, los resultados se ordenaron antes de compararlos, ya que el orden de los clientes puede variar entre las implementaciones.
+    
+
+                        | Conjunto de datos      | ¿Los resultados coinciden?    |
+                        | Datos del Día 1        |      [Sí / No]                |
+                        | 5.000 ventas generadas |      [Sí / No]                |
+
+
+         La versión con Set identifica los clientes que aparecen más de una vez. La versión con Map cuenta las compras de cada cliente y luego selecciona aquellos cuyo conteo es mayor que uno.
+
+    Medición del rendimiento.
+
+        Se midió el tiempo de ejecución de las tres versiones con 1.000, 10.000 y 100.000 ventas y estos fueron los resultados:
+
+
+                        | Cantidad de ventas | Versión original (ms) | Versión con Set (ms) | Versión con Map (ms) |
+                        | 1.000              |     2.652 ms          |   0.186 ms           |    0.33a ms          |
+                        | 10.000             |    359.069 ms         |   1.289 ms           |    1.307 ms          |
+                        | 100.000            |  [omitida o tiempo]   |  13.533 ms           |    15.432 ms         |
+
+
+
+    Intercambio entre tiempo y memoria.
+
+        La versión original compara las ventas mediante ciclos anidados. Esto puede provocar que el tiempo de ejecución aumente considerablemente cuando crece la cantidad de registros. 
+
+        La versión optimizada con Set recorre las ventas y utiliza conjuntos para registrar los clientes vistos y los recurrentes. Esto permite evitar comparaciones repetidas y mejora el tiempo de ejecución esperado.
+
+        La versión con Map también recorre las ventas, pero mantiene un conteo de compras por cliente. Además de identificar clientes recurrentes, permite conocer cuántas compras realizó cada uno. 
+
+        En conclusión, las versiones con Set y Map utilizan más memoria que la versión original, pero pueden reducir significativamente el tiempo de ejecución. Set resulta apropiado cuando solo se necesita identificar clientes recurrentes, mientras que Map es útil cuando también se necesita contar sus compras.
+
+

@@ -4,6 +4,12 @@
 const analitica = require("./analitica");
 const {generarVentas} = require ("./generador");
 const { clientesRecurrentes } = require("./analitica");
+const { performance } = require("perf_hooks");
+
+const {
+  clientesRecurrentesSet,
+  comprasPorCliente
+} = require("./optimizadas");
 
 const muestra = [100, 1000, 10000, 100000];
 const resultados = [];
@@ -34,7 +40,7 @@ console.table(resultados);
 
 // Funcion Muestras Recurrentes con diferentes valores agregados
 
-const muestrasRecurrentes = [1000, 2000, 4000, 8000, 16000];
+const muestrasRecurrentes = [1000, 10000, 100000];
 //const muestrasRecurrentes = [1000, 2000, 4000, 8000, 16000, 100000, 1000000];
 
 
@@ -166,3 +172,59 @@ const resultado10 = analitica.totalCiudadUnaPasada(lote10, "Medellín");
 console.timeEnd("totalCiudadUnaPasada con 10.000 ventas ");
 
 console.log("Resultado de totalCiudadUnaPasada:", resultado10);
+
+
+// Comparación de rendimiento: clientes recurrentes
+// Original vs Set vs Map
+
+function clientesRecurrentesMap(ventas) {
+  const compras = comprasPorCliente(ventas);
+
+  return [...compras]
+    .filter(([cliente, cantidad]) => cantidad > 1)
+    .map(([cliente]) => cliente);
+}
+
+function medirTiempo(nombre, funcion, lote) {
+  const inicio = performance.now();
+  const resultado = funcion(lote);
+  const fin = performance.now();
+
+  console.log(
+    `${nombre}: ${(fin - inicio).toFixed(3)} ms`
+  );
+
+  return resultado;
+}
+
+const muestrasComparacion = [1000, 10000, 100000];
+const tablaComparacion = [];
+
+for (const n of muestrasComparacion) {
+  const loteComparacion = generarVentas(n);
+
+  console.log(`\n--- ${n} ventas ---`);
+
+  // La versión original puede ser muy lenta con lotes grandes.
+  if (n <= 10000) {
+    medirTiempo(
+      "Original",
+      clientesRecurrentes,
+      loteComparacion
+    );
+  } else {
+    console.log("Original: omitida por costo de ejecución");
+  }
+
+  medirTiempo(
+    "Set",
+    clientesRecurrentesSet,
+    loteComparacion
+  );
+
+  medirTiempo(
+    "Map",
+    clientesRecurrentesMap,
+    loteComparacion
+  );
+}
